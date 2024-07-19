@@ -7,14 +7,16 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \\\"Error: no test specified\\\" && exit 1",
-    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd / && cd /Stack/Fullstack-PalautusRepo/osa2/puhelinluettelo && npm run build && cd / && @powershell Copy-Item /Stack/Fullstack-PalautusRepo/osa2/puhelinluettelo/dist -Recurse /Stack3/Fullstack-Osa3",
+    "build:ui": "@powershell Remove-Item -Recurse -Force dist && cd /d /puhelinluettelo && npm run build && cd / && @powershell Copy-Item /puhelinluettelo/dist -Recurse /Stack3/Fullstack-Osa3",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push"
   },
   "author": "Lassi Ropponen",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "mongoose": "^8.5.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
